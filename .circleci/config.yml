@@ -18,10 +18,7 @@ jobs:
             docker-compose up -d
             docker-compose run dockerapp python test.py
             docker login -u $DOCKER_HUB_USER_ID -p $DOCKER_HUB_PWD
-            docker tag school-of-devops-circleci_dockerapp $DOCKER_HUB_USER_ID/dockerapp:$CIRCLE_SHA1
-            docker tag school-of-devops-circleci_dockerapp $DOCKER_HUB_USER_ID/dockerapp:latest
+            docker tag schoolofdevopscircleci_dockerapp $DOCKER_HUB_USER_ID/dockerapp:$CIRCLE_SHA1
+            docker tag schoolofdevopscircleci_dockerapp $DOCKER_HUB_USER_ID/dockerapp:latest
             docker push $DOCKER_HUB_USER_ID/dockerapp:$CIRCLE_SHA1
             docker push $DOCKER_HUB_USER_ID/dockerapp:latest
-
-
-
