@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: /dockerapp
+    working_directory: /school-of-devops-circleci
     docker:
       - image: docker:17.05.0-ce-git
     steps:
@@ -17,3 +17,4 @@ jobs:
           command: |
             docker-compose up -d
             docker-compose run dockerapp python test.py
+
